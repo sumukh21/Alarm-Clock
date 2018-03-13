@@ -17,11 +17,12 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".com.example.sumukhkudu.alarmclock.AlarmReceiver" />
 
-        <service
-            android:name=".RingtonePlayingService"
-            android:enabled="true"></service>
+        <receiver android:name=".AlarmReceiver" />
+
+        <service android:name=".RingtonePlayingService"
+            android:enabled="true">
+        </service>
 
     </application>
 

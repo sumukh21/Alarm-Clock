@@ -6,14 +6,13 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import java.util.Calendar;
 import java.util.Random;
 
@@ -21,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     AlarmManager alarmManager;
     private PendingIntent pending_intent;
-
     private TimePicker alarmTimePicker;
     private TextView alarmTextView;
-
     private AlarmReceiver alarm;
 
 
@@ -35,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         this.context = this;
 
@@ -52,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         final Calendar calendar = Calendar.getInstance();
 
         alarmTimePicker = (TimePicker) findViewById(R.id.alarmTimePicker);
-
-
 
         Button start_alarm= (Button) findViewById(R.id.start_alarm);
         start_alarm.setOnClickListener(new View.OnClickListener() {
@@ -80,11 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
-
                 // now you should change the set Alarm text so it says something nice
-
-
                 setAlarmText("Alarm set to " + hour + ":" + minute);
+
                 //Toast.makeText(getApplicationContext(), "You set the alarm", Toast.LENGTH_SHORT).show();
             }
 
@@ -132,3 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.e("MyActivity", "on Destroy");
     }
+
+
+}
